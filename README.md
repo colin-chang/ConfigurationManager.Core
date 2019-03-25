@@ -1,6 +1,15 @@
 # ConfigurationHelper.Core
 A configuration reader for .NET Core Application.
 
+**Nuget**
+```sh
+# Package Manager
+Install-Package ColinChang.ConfigurationManager.Core
+
+# .NET CLI
+dotnet add package ColinChang.ConfigurationManager.Core
+```
+
 **Configuration Supported**
 * CommandLine
 * InMemoryCollection
