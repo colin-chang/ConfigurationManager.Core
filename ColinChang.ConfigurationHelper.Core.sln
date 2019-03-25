@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColinChang.ConfigurationHelper.Core", "ColinChang.ConfigurationHelper.Core\ColinChang.ConfigurationHelper.Core.csproj", "{20F7AC46-1A54-4D90-9848-C66544862521}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColinChang.ConfigurationHelper.Sample", "ColinChang.ConfigurationHelper.Sample\ColinChang.ConfigurationHelper.Sample.csproj", "{4A84E2BB-979F-40C3-85D6-1018B948EB51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20F7AC46-1A54-4D90-9848-C66544862521}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20F7AC46-1A54-4D90-9848-C66544862521}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20F7AC46-1A54-4D90-9848-C66544862521}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20F7AC46-1A54-4D90-9848-C66544862521}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A84E2BB-979F-40C3-85D6-1018B948EB51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A84E2BB-979F-40C3-85D6-1018B948EB51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A84E2BB-979F-40C3-85D6-1018B948EB51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A84E2BB-979F-40C3-85D6-1018B948EB51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
