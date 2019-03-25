@@ -1,19 +1,19 @@
+using System.Collections.Generic;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 
-namespace ColinChang.ConfigurationHelper.Core
+namespace ColinChang.ConfigurationManager.Core
 {
     public class ConfigurationManager
     {
         /// <summary>
-        /// 配置Root节点
-        /// 读取一级节点：ConfigUtil.Configuration["nodeName"],读取多级节点：ConfigUtil.Configuration["node1:node2"]
+        /// Indexer of Configurations in appsettings.json
         /// </summary>
         public static IConfiguration Configuration { get; }
 
         /// <summary>
-        /// 读取CommandLine配置。
+        /// Indexer of CommandLine and InMemoryCollection configuration.
         /// </summary>
         /// <param name="cmdParameter">CommandLine参数名</param>
         public string this[string cmdParameter] => _cmdConfiguration[cmdParameter];
@@ -24,28 +24,33 @@ namespace ColinChang.ConfigurationHelper.Core
         static ConfigurationManager()
         {
             Configuration = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json", false, true)
+                .AddJsonFile("appsettings.json", true, true)
                 .Build();
 
             _services = new ServiceCollection();
         }
 
         /// <summary>
-        /// 创建用于"读取CommandLine配置"的对象
+        /// Create an instance can read CommandLine and InMemoryCollection configuration.
         /// </summary>
-        /// <param name="args">AddCommandLine args</param>
-        public ConfigurationManager(string[] args)
+        /// <param name="args">CommandLine args</param>
+        /// <param name="memoryCollection">InMemoryCollection Configuration</param>
+        public ConfigurationManager(string[] args = null, Dictionary<string, string> memoryCollection = null)
         {
-            _cmdConfiguration = new ConfigurationBuilder()
-                .AddCommandLine(args)
-                .Build();
+            var config = new ConfigurationBuilder();
+            if (args != null)
+                config.AddCommandLine(args);
+            if (memoryCollection != null)
+                config.AddInMemoryCollection(memoryCollection);
+
+            _cmdConfiguration = config.Build();
         }
 
         /// <summary>
-        /// 读取配置
+        /// Get layered configuration in appsettings.json
         /// </summary>
-        /// <param name="keys">节点名称序列</param>
-        /// <returns>配置值</returns>
+        /// <param name="keys">layered keys of configurations</param>
+        /// <returns>configuration value</returns>
         public static string GetAppSettings(params string[] keys)
         {
             if (keys == null || keys.Length <= 0)
@@ -55,11 +60,11 @@ namespace ColinChang.ConfigurationHelper.Core
         }
 
         /// <summary>
-        /// 读取配置
+        /// Get configurations in appsettings.json and map to a specify object.
         /// </summary>
-        /// <param name="key">节点名称</param>
-        /// <typeparam name="T">配置对象类型</typeparam>
-        /// <returns>配置对象</returns>
+        /// <param name="key">key of the specify configurations</param>
+        /// <typeparam name="T">Type of the object to map to.</typeparam>
+        /// <returns>configuration object</returns>
         public static T GetAppSettings<T>(string key) where T : class, new()
         {
             return _services.Configure<T>(Configuration.GetSection(key)).BuildServiceProvider()

@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColinChang.ConfigurationHelper.Core", "ColinChang.ConfigurationHelper.Core\ColinChang.ConfigurationHelper.Core.csproj", "{20F7AC46-1A54-4D90-9848-C66544862521}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColinChang.ConfigurationManager.Core", "ColinChang.ConfigurationManager.Core\ColinChang.ConfigurationManager.Core.csproj", "{20F7AC46-1A54-4D90-9848-C66544862521}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColinChang.ConfigurationHelper.Sample", "ColinChang.ConfigurationHelper.Sample\ColinChang.ConfigurationHelper.Sample.csproj", "{4A84E2BB-979F-40C3-85D6-1018B948EB51}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColinChang.ConfigurationManager.Sample", "ColinChang.ConfigurationManager.Sample\ColinChang.ConfigurationManager.Sample.csproj", "{4A84E2BB-979F-40C3-85D6-1018B948EB51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
