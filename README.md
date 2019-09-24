@@ -16,7 +16,7 @@ dotnet add package ColinChang.ConfigurationManager.Core
 * Json file named `appsettings.json`
 * Reload on change automatically
 
-All of the knowledge of the package is based on https://colin-chang.site/netcore/pages/config.html 
+All of the knowledge of the package is based on https://netcore.colinchang.net/pages/config.html 
 
 **Requirements**
 * .Net Core 2.2 or newer
